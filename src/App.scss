@@ -89,20 +89,50 @@ h1 {
 .btn:hover {
   background-color: rgba(#0B5ED7, 0.8);
 }
-.btn:hover .messageOnHover{
-  display: block;
-}
+
+// .btn:hover .messageOnHover{
+//   display: block;
+// }
 
 @media only screen and (max-width: 1050px) {
   .container {
     width: 90%;
   }
-  .para{
+
+  .para {
     width: 70%;
   }
 }
 
-.messageOnHover{
+// .messageOnHover{
+//   position: absolute;
+//   background: #eee;
+//   border-radius: 2px;
+//   letter-spacing: 0;
+//   color: #4c4c4c;
+//   padding: .25rem;
+//   border: 1px solid #787878;
+//   top: 110%;
+//   left: 0;
+//   display: none;
+// }
+
+.belowBtns {
+  margin-top: 2rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.para2 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .8rem;
+  margin-bottom: 1rem;
+}
+
+.messageOnHover {
   position: absolute;
   background: #eee;
   border-radius: 2px;
@@ -112,19 +142,29 @@ h1 {
   border: 1px solid #787878;
   top: 110%;
   left: 0;
-  display: none;
+  opacity: 0;
 }
 
-.belowBtns{
-  margin-top: 2rem;
-  text-align: right;
-  padding-right: 1rem;
+.btn:hover .messageOnHover {
+  animation: anime 4s ease-in-out 2s;
 }
-.para2{
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: .8rem;
-  margin-bottom: 1rem;
+
+@keyframes anime {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  25% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
